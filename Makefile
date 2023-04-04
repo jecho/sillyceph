@@ -11,6 +11,7 @@ cleanup-hosts:
 	sudo dmsetup remove_all
 
 cleanup-pools:
+	ceph orch rm rgw.cnct-rgw
 	cephadm shell --fsid f3237e67-4dec-4396-95ed-a32159026bae -- ceph tell mon.\* injectargs '--mon-allow-pool-delete=true'
 	ceph osd pool delete .rgw.root .rgw.root --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.control cnct-zone.rgw.control --yes-i-really-really-mean-it
