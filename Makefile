@@ -23,3 +23,6 @@ cleanup-pools:
 	ceph osd pool delete cnct-zone.rgw.cnct-placement-b.buckets.index cnct-zone.rgw.cnct-placement-b.buckets.index  --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.cnct-placement-b.buckets.data cnct-zone.rgw.cnct-placement-b.buckets.data  --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.cnct-placement-b.buckets.non-ec cnct-zone.rgw.cnct-placement-b.buckets.non-ec  --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.meta default.rgw.meta --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.control default.rgw.control --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.log default.rgw.log --yes-i-really-really-mean-it
