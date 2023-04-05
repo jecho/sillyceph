@@ -26,3 +26,7 @@ cleanup-pools:
 	ceph osd pool delete default.rgw.meta default.rgw.meta --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.control default.rgw.control --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.log default.rgw.log --yes-i-really-really-mean-it
+
+cleanup-zones:
+	radosgw-admin realm rm --rgw-realm=cnct-realm
+	radosgw-admin zone delete --rgw-zone=cnct-zone --master
