@@ -4,7 +4,6 @@ cleanup-bootstrapper:
 
 cleanup-hosts:
 	cephadm rm-cluster --fsid f3237e67-4dec-4396-95ed-a32159026bae --force
-	dd if=/dev/zero bs=1024 count=1024 of=/dev/sdb
 	dd if=/dev/zero bs=1024 count=1024 of=/dev/sdc
 	dd if=/dev/zero bs=1024 count=1024 of=/dev/sdd
 	dd if=/dev/zero bs=1024 count=1024 of=/dev/sde
@@ -28,6 +27,9 @@ cleanup-pools:
 	ceph osd pool delete default.rgw.control default.rgw.control --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.log default.rgw.log --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.meta default.rgw.meta --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.buckets.index  default.rgw.buckets.index --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.buckets.data  default.rgw.buckets.data --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.buckets.non-ec  default.rgw.buckets.non-ec --yes-i-really-really-mean-it
 
 cleanup-zones:
 	radosgw-admin realm rm --rgw-realm=cnct-realm
