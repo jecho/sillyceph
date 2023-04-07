@@ -15,6 +15,7 @@ cleanup-pools:
 	cephadm shell --fsid f3237e67-4dec-4396-95ed-a32159026bae -- ceph tell mon.\* injectargs '--mon-allow-pool-delete=true'
 	ceph osd pool delete .rgw.root .rgw.root --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.control cnct-zone.rgw.control --yes-i-really-really-mean-it
+	ceph osd pool delete cnct-zone.rgw.meta cnct-zone.rgw.meta --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.gc cnct-zone.rgw.gc --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.log cnct-zone.rgw.log --yes-i-really-really-mean-it
 	ceph osd pool delete cnct-zone.rgw.intent-log cnct-zone.rgw.intent-log --yes-i-really-really-mean-it
@@ -26,6 +27,7 @@ cleanup-pools:
 	ceph osd pool delete default.rgw.meta default.rgw.meta --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.control default.rgw.control --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.log default.rgw.log --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.meta default.rgw.meta --yes-i-really-really-mean-it
 
 cleanup-zones:
 	radosgw-admin realm rm --rgw-realm=cnct-realm
