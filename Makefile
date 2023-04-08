@@ -34,7 +34,9 @@ cleanup-pools:
 	ceph osd pool delete us-west-1.rgw.swagger.data us-west-1.rgw.swagger.data --yes-i-really-really-mean-it
 	ceph osd pool delete us-west-1.rgw.swagger.index  us-west-1.rgw.swagger.index --yes-i-really-really-mean-it
 	ceph osd pool delete us-west-1.rgw.swagger.non-ec us-west-1.rgw.swagger.non-ec --yes-i-really-really-mean-it
-
+	ceph osd pool delete default.rgw.swagger.data default.rgw.swagger.data --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.swagger.non-ec default.rgw.swagger.non-ec --yes-i-really-really-mean-it
+	ceph osd pool delete default.rgw.swagger.index default.rgw.swagger.index --yes-i-really-really-mean-it
 
 cleanup-zones:
 	radosgw-admin realm rm --rgw-realm=us-west-1a
