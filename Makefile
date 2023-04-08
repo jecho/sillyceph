@@ -10,19 +10,20 @@ cleanup-hosts:
 	sudo dmsetup remove_all
 
 cleanup-pools:
-	ceph orch rm rgw.cnct-rgw
+	ceph orch rm rgw.cnct
 	cephadm shell --fsid f3237e67-4dec-4396-95ed-a32159026bae -- ceph tell mon.\* injectargs '--mon-allow-pool-delete=true'
 	ceph osd pool delete .rgw.root .rgw.root --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.control cnct-zone.rgw.control --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.meta cnct-zone.rgw.meta --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.gc cnct-zone.rgw.gc --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.log cnct-zone.rgw.log --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.intent-log cnct-zone.rgw.intent-log --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.buckets.index cnct-zone.rgw.buckets.index --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.buckets.data cnct-zone.rgw.buckets.data --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.cnct-placement-b.buckets.index cnct-zone.rgw.cnct-placement-b.buckets.index  --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.cnct-placement-b.buckets.data cnct-zone.rgw.cnct-placement-b.buckets.data  --yes-i-really-really-mean-it
-	ceph osd pool delete cnct-zone.rgw.cnct-placement-b.buckets.non-ec cnct-zone.rgw.cnct-placement-b.buckets.non-ec  --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.control us-west-1.rgw.control --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.meta us-west-1.rgw.meta --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.gc us-west-1.rgw.gc --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.log us-west-1.rgw.log --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.intent-log us-west-1.rgw.intent-log --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.buckets.index us-west-1.rgw.buckets.index --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.buckets.data us-west-1.rgw.buckets.data --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.buckets.non-ec us-west-1.rgw.buckets.non-ec --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.cnct-placement-b.buckets.index us-west-1.rgw.cnct-placement-b.buckets.index  --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.cnct-placement-b.buckets.data us-west-1.rgw.cnct-placement-b.buckets.data  --yes-i-really-really-mean-it
+	ceph osd pool delete us-west-1.rgw.cnct-placement-b.buckets.non-ec us-west-1.rgw.cnct-placement-b.buckets.non-ec  --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.meta default.rgw.meta --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.control default.rgw.control --yes-i-really-really-mean-it
 	ceph osd pool delete default.rgw.log default.rgw.log --yes-i-really-really-mean-it
@@ -32,5 +33,5 @@ cleanup-pools:
 	ceph osd pool delete default.rgw.buckets.non-ec  default.rgw.buckets.non-ec --yes-i-really-really-mean-it
 
 cleanup-zones:
-	radosgw-admin realm rm --rgw-realm=cnct-realm
-	radosgw-admin zone delete --rgw-zone=cnct-zone --master
+	radosgw-admin realm rm --rgw-realm=us-west-1a
+	radosgw-admin zone delete --rgw-zone=us-west-1 --master
