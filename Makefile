@@ -11,6 +11,7 @@ cleanup-hosts:
 
 cleanup-pools:
 	ceph orch rm rgw.cnct
+	ceph orch rm ingress.rgw.cnct
 	cephadm shell --fsid f3237e67-4dec-4396-95ed-a32159026bae -- ceph tell mon.\* injectargs '--mon-allow-pool-delete=true'
 	ceph osd pool delete .rgw.root .rgw.root --yes-i-really-really-mean-it
 	ceph osd pool delete us-west-1.rgw.control us-west-1.rgw.control --yes-i-really-really-mean-it
