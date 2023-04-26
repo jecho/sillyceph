@@ -42,3 +42,6 @@ cleanup-pools:
 cleanup-zones:
 	radosgw-admin realm rm --rgw-realm=us-west-1a
 	radosgw-admin zone delete --rgw-zone=us-west-1 --master
+
+events:
+	ceph orch ls --service_name=$(SERVICE_NAME) --format yaml
