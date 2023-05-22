@@ -45,3 +45,10 @@ cleanup-zones:
 
 events:
 	ceph orch ls --service_name=$(SERVICE_NAME) --format yaml
+
+podman:
+	echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+	curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/Release.key | sudo apt-key add -
+	apt-get update
+	apt-get -y upgrade
+	apt-get -y install podman
