@@ -53,3 +53,7 @@ podman:
 	apt-get update
 	apt-get -y upgrade
 	apt-get -y install podman
+
+update-ubuntu:
+	apt-get update -y
+	apt-get upgrade -y
