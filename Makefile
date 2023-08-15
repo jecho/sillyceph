@@ -1,9 +1,9 @@
 
 cleanup-bootstrapper:
-	cephadm rm-cluster --fsid f3237e67-4dec-4396-95ed-a32159026bae --force
+	./cephadm rm-cluster --fsid f3237e67-4dec-4396-95ed-a32159026bae --force
 
 cleanup-hosts:
-	cephadm rm-cluster --fsid f3237e67-4dec-4396-95ed-a32159026bae --force
+	./cephadm rm-cluster --fsid f3237e67-4dec-4396-95ed-a32159026bae --force
 	dd if=/dev/zero bs=1024 count=1024 of=/dev/sdc
 	dd if=/dev/zero bs=1024 count=1024 of=/dev/sdd
 	dd if=/dev/zero bs=1024 count=1024 of=/dev/sde
